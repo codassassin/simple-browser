@@ -10,3 +10,7 @@ PyQt5~=5.15.4
 ```
 python3 main.py
 ```
+
+## Sample images
+### Home Page
+![Home_page](https://user-images.githubusercontent.com/55107082/122720991-c1e27e80-d28d-11eb-841b-93c37bfdc185.jpg)
