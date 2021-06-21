@@ -5,3 +5,8 @@ This is a simple browser created using pyQT
 ```
 PyQt5~=5.15.4
 ```
+
+## Run the python file
+```
+python3 main.py
+```
