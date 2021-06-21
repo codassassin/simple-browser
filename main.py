@@ -43,14 +43,18 @@ class MainWindow(QMainWindow):
 
     def navigate_to_url(self):
         url = self.url_bar.text()
-        if 'http:' in url:
+        common_sites = ['google', 'facebook', 'twitter', 'duckduckgo']
+        if url in common_sites:
+            url = 'https://' + url + '.com'
+        elif url not in common_sites and not ('http:' in url or 'https:' in url) and not ('.' in url):
+            url = 'https://duckduckgo.com/?q=' + url
+        elif 'http:' in url:
             url_l = url.split(':')
             url = 'https:' + url_l[1]
         # elif 'ftp:' or 'smtp:' in url:
         #     url = url
         elif 'http:' or 'https:' not in url:
             url = 'https://' + url
-
         self.browser.setUrl(QUrl(url))
 
     def update_url(self, q):
@@ -61,3 +65,4 @@ app = QApplication(sys.argv)
 QApplication.setApplicationName('codassassin')
 window = MainWindow()
 app.exec_()
+
